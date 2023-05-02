@@ -7,7 +7,7 @@ const AllChef = () => {
     const allChef = useLoaderData()
     console.log(allChef)
     return (
-        <Container >
+        <Container className='my-5 py-5'>
                  <Row xs={1} md={6} className="g-4">
             {
                 allChef.map(chef => <Chef key={chef.id} chef={chef}></Chef>)

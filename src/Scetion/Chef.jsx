@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Button, Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Chef = ({chef}) => {
     console.log(chef)
@@ -8,13 +9,14 @@ const Chef = ({chef}) => {
     return (
             <Col md={4} className=''>
                 <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Img variant="top" src={chefPicture} />
                     <Card.Body>
-                      <Card.Title>Card title</Card.Title>
+                      <Card.Title className='text-warning text-decoration-none fs-4 fw-bold'>{chefName}</Card.Title>
                       <Card.Text>
-                        This is a longer card with supporting text below as a natural
-                        lead-in to additional content. This content is a little bit
-                        longer.
+                        <h6>{yearsOfExperience} Years of experience</h6>
+                        <h6>{numberOfRecipes} Recipes</h6>
+                        <h6>{totalLikes} Liks</h6>
+                        <Button className='btn-danger'><Link className='text-white text-decoration-none'>Read More</Link></Button>
                       </Card.Text>
                     </Card.Body>
           </Card>
