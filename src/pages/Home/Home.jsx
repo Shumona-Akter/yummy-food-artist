@@ -1,10 +1,15 @@
 import React from 'react';
+import HomeBanner from '../../Scetion/HomeBanner';
+import OurStory from '../../Scetion/OurStory';
+import Testimonial from '../../Scetion/Testimonial';
 
 const Home = () => {
     return (
-        <div>
-            hello home
-        </div>
+        <>
+            <HomeBanner></HomeBanner>
+            <OurStory></OurStory>
+            <Testimonial></Testimonial>
+        </>
     );
 };
 
