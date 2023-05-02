@@ -1,11 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { FaGoogle, FaGithub} from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
   const {user,signInGoogle, setUser,authError,setAuthError,signIn,} = useContext(AuthContext)
+  
+  // const location = useLocation()
+  console.log(location)
+
+
+  const form = Location.state?.form?.pathname || "/"
+
   const handleGoogleSignIn = ()=>{
     signInGoogle()
     .then(result =>{

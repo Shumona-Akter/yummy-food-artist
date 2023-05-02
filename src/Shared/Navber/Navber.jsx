@@ -6,11 +6,14 @@ import { AuthContext } from '../../provider/AuthProvider';
 const Navber = () => {
     const [isActive, setIsActive] = useState(true)
     const {user, logOut} = useContext(AuthContext)
-
+    // if(user){
+    //   <h1>loading...</h1>
+    // }
     const handleLogout = ()=>{
       logOut()
-      .then(() => {
-      }).catch((error) => {
+      console.log(logOut())
+      .then()
+      .catch((error) => {
         console.log(error)
       });
     }

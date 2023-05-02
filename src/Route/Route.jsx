@@ -15,6 +15,7 @@ const router = createBrowserRouter([
         path:"/",
         element:<Home></Home>,
         errorElement:<ErrorLayout></ErrorLayout>,
+        loader:() => fetch("https://yummy-server-shumona-akter.vercel.app/")
       },
         {
         path:"/login",
