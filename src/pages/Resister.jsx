@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { FaGoogle, FaGithub} from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Resister = () => {
+  const {signUp} = useContext(AuthContext)
     return (
         <Container className='d-flex  justify-content-center'>
           <div className=' w-50'>

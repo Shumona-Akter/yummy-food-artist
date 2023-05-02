@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import './Navber.css'
+import { AuthContext } from '../../provider/AuthProvider';
 const Navber = () => {
     const [isActive, setIsActive] = useState(true)
+    const {user} = useContext(AuthContext)
     return (
         <Navbar bg="black py-4" expand="lg">
       <Container>
@@ -19,7 +21,10 @@ const Navber = () => {
           </Nav>
           <div className="d-flex align-items-center text-white">
             <p>profile</p>
-            <Button className='btn btn-danger'><Link to='/login' className='text-decoration-none text-white'>Login</Link></Button>
+            {
+              user?<Button className='btn btn-danger'><Link to='/login' className='text-decoration-none text-white'>Logout</Link></Button>:<Button className='btn btn-danger'><Link to='/login' className='text-decoration-none text-white'>Login</Link></Button>
+            }
+            
           </div>
         </Navbar.Collapse>
       </Container>
