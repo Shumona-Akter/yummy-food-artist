@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
-  const {user,signInGoogle, setUser,setAuthError} = useContext(AuthContext)
+  const {user,signInGoogle, setUser,authError,setAuthError,signIn,} = useContext(AuthContext)
   const handleGoogleSignIn = ()=>{
     signInGoogle()
     .then(result =>{
@@ -17,26 +17,45 @@ const Login = () => {
     })
     
   }
+
+  // sign in google
+  const handleSignIn = (event)=>{
+    event.preventDefault()
+    const form = event.target;
+    const email = form.email.value
+    // const password = form.Password.value
+    const password = form.password.value
+    console.log(email,password)
+    signIn(email, password)
+    .then(result =>{
+      const loggedUser = result.user
+      setUser(loggedUser)
+      setAuthError("")
+      event.target.reset()
+    })
+    .catch(err => {
+      setAuthError("Invalid email or password")
+    })
+  }
     return (
         <Container className='d-flex  justify-content-center'>
           <div className=' w-50'>
           <h1 className='text-primary fs-4  text-center py-3'>Login Here Please!</h1>
-            <Form >
+            <Form onSubmit={handleSignIn}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control type="email" name="email" placeholder="Enter email" />
         </Form.Group>
   
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control type="password" name="password" placeholder="Password" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
+       
         <Button variant="primary" type="submit">
           Submit
         </Button>
+        <p className="text-danger">{authError}</p>
       </Form>
       <h1 className='text-primary fs-6  text-center py-1'>Sign in with</h1>
       <div className='text-center'>

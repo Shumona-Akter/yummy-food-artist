@@ -5,7 +5,15 @@ import './Navber.css'
 import { AuthContext } from '../../provider/AuthProvider';
 const Navber = () => {
     const [isActive, setIsActive] = useState(true)
-    const {user} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext)
+
+    const handleLogout = ()=>{
+      logOut()
+      .then(() => {
+      }).catch((error) => {
+        console.log(error)
+      });
+    }
     return (
         <Navbar bg="black py-4" expand="lg">
       <Container>
@@ -22,7 +30,7 @@ const Navber = () => {
           <div className="d-flex align-items-center text-white">
             <p>profile</p>
             {
-              user?<Button className='btn btn-danger'><Link to='/login' className='text-decoration-none text-white'>Logout</Link></Button>:<Button className='btn btn-danger'><Link to='/login' className='text-decoration-none text-white'>Login</Link></Button>
+              user?<Button className='btn btn-danger'><Link to='/login' className='text-decoration-none text-white' onClick={handleLogout}>Logout</Link></Button>:<Button className='btn btn-danger'><Link to='/login' className='text-decoration-none text-white'>Login</Link></Button>
             }
             
           </div>
