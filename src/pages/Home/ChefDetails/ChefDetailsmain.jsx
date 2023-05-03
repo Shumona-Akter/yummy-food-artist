@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { FaHandPointRight } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 const ChefDetailsmain = () => {
@@ -12,6 +14,14 @@ const ChefDetailsmain = () => {
     console.log(chefDetails)
     const {chefName,chefPicture, numberOfRecipes
 ,shortBio,totalLikes,totalRecipes,yearsOfExperience    } = chefDetails
+const [isDisable, setDisable] =useState(false)
+const notify = () => {
+  toast("Your favorite items😊")
+  setDisable(!isDisable)
+};
+    
+    
+
     return (
         <>
             <div style={{background: `url(${chefPicture}) no-repeat top / cover` , }} className='p-5'>
@@ -27,6 +37,8 @@ const ChefDetailsmain = () => {
             </div>
 
             <Container className='py-5 my-5'>
+              <h1 className='text-danger text-center my-3 display-5 fw-bold'>{chefName}</h1>
+              <h1 className='text-warning text-center fs-5 mb-5'>{chefName} Best Three Recipes Here</h1>
             <Row xs={1} md={3} className="g-4">
                             <Col>
                               <Card>
@@ -38,7 +50,8 @@ const ChefDetailsmain = () => {
                                     <p className='text-black fs-6'><span className='text-warning'>Cooking_method:</span> {totalRecipes.recipes?.recipe1?.cooking_method}</p>
                                     <Rating style={{ maxWidth: 100 }} value={Rating} readOnly />
                                     <p className=' fs-6 text-warning'>Rating:  {totalRecipes.recipes?.recipe1?.rating} M</p>
-                                    <Button>Favorite</Button>
+                                    <Button  onClick={notify} disabled={isDisable}
+                                    >Favorite</Button>
                                   </Card.Text>
                                 </Card.Body>
                               </Card>
@@ -53,7 +66,8 @@ const ChefDetailsmain = () => {
                                     <p className='text-black fs-6'><span className='text-warning'>Cooking_method:</span> {totalRecipes.recipes?.recipe2?.cooking_method}</p>
                                     <Rating style={{ maxWidth: 100 }} value={Rating} readOnly />
                                     <p className=' fs-6 text-warning'>Rating:  {totalRecipes.recipes?.recipe2?.rating} M</p>
-                                    <Button>Favorite</Button>
+                                    <Button onClick={notify}  disabled={isDisable}>Favorite</Button>
+                                    <ToastContainer />
                                   </Card.Text>
                                 </Card.Body>
                               </Card>
@@ -68,7 +82,7 @@ const ChefDetailsmain = () => {
                                     <p className='text-black fs-6'><span className='text-warning'>Cooking_method:</span> {totalRecipes.recipes?.recipe3?.cooking_method}</p>
                                     <Rating style={{ maxWidth: 100 }} value={Rating} readOnly />
                                     <p className=' fs-6 text-warning'>Rating:  {totalRecipes.recipes?.recipe3?.rating} M</p>
-                                    <Button>Favorite</Button>
+                                    <Button nClick={notify}  disabled={isDisable}>Favorite</Button>
                                   </Card.Text>
                                 </Card.Body>
                               </Card>

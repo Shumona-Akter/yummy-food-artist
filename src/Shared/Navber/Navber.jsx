@@ -25,10 +25,10 @@ const Navber = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto ">
           <NavLink to="/" className={`text-warning      text-decoration-none fs-5 fw-bold ${isActive?"text-danger":""}`}><span>Home</span></NavLink>
-          <NavLink to="" className={`text-warning text-decoration-none fs-5 fw-bold ${isActive?"text-danger":""}`}><span className='ps-4'>About us</span></NavLink>
+          <NavLink to="/about" className={`text-warning text-decoration-none fs-5 fw-bold ${isActive?"text-danger":""}`}><span className='ps-4'>About us</span></NavLink>
           <NavLink to="" className={`text-warning text-decoration-none fs-5 fw-bold ${isActive?"text-danger":""}`}><span className='ps-4'>services</span></NavLink>
           <NavLink to="" className={`text-warning text-decoration-none fs-5 fw-bold ${isActive?"text-danger":""}`}><span className='ps-4'>Shop</span></NavLink>
-          <NavLink to="" className={`text-warning text-decoration-none fs-5 fw-bold ${isActive?"text-danger":""}`}><span className='ps-4'>Blog</span></NavLink>
+          <NavLink to="/blog" className={`text-warning text-decoration-none fs-5 fw-bold ${isActive?"text-danger":""}`}><span className='ps-4'>Blog</span></NavLink>
           </Nav>
           <div className="d-flex align-items-center text-white">
             <p>profile</p>
