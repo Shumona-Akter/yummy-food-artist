@@ -1,12 +1,12 @@
 import React, { useContext} from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { FaGoogle, FaGithub} from "react-icons/fa";
-import { useLocation } from "react-router-dom";
+import {useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
-  const {user,signInGoogle, setUser,authError,setAuthError,signIn,} = useContext(AuthContext)
+  const {user,signInGoogle,signInGithub, setUser,authError,setAuthError,signIn,} = useContext(AuthContext)
   
   // const location = useLocation()
   console.log(location)
@@ -25,6 +25,20 @@ const Login = () => {
     })
     
   }
+  // github
+  const handleGithubSignIn = ()=>{
+    signInGithub()
+    .then(result =>{
+      const googleUser = result.user
+     setUser(googleUser)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+    
+  }
+
+  // github sign in
 
   // sign in google
   const handleSignIn = (event)=>{
@@ -40,6 +54,7 @@ const Login = () => {
       setUser(loggedUser)
       setAuthError("")
       event.target.reset()
+      
     })
     .catch(err => {
       setAuthError("Invalid email or password")
@@ -68,7 +83,7 @@ const Login = () => {
       <h1 className='text-primary fs-6  text-center py-1'>Sign in with</h1>
       <div className='text-center'>
         <Button className='text-white btn-warning' onClick={handleGoogleSignIn}><FaGoogle></FaGoogle></Button>
-        <Button className='text-white btn-warning mx-3'><FaGithub/></Button>
+        <Button className='text-white btn-warning mx-3 ' onClick={handleGithubSignIn}><FaGithub/></Button>
       </div>
       <h1 className='text-danger fs-6  text-center py-1'>
             I have no an account <Link to='/resister'>Register</Link>
