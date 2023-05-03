@@ -3,6 +3,7 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { FaGoogle, FaGithub} from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Resister = () => {
   const {signUp,authError,setAuthError, user, setUser} = useContext(AuthContext)
@@ -37,6 +38,7 @@ const Resister = () => {
         setUser(resisterUser)
         setAuthError("")
         event.target.reset()
+        userProfileUpdate(result.user, name, photoUrl)
        
       })
       .catch(error =>{
@@ -44,9 +46,19 @@ const Resister = () => {
         setAuthError("Invalid email or Password")
       } )
 
-    // handle password
     
-
+// user profile update
+      const userProfileUpdate = (user, name, photoUrl) =>{
+        updateProfile(user, {
+          displayName: name,
+          photoUR: photoUrl
+        })
+        .then(() => {
+          console.log(name)
+        }).catch((error) => {
+          console.log(error)
+        });
+      }
   }
     return (
         <Container className='d-flex  justify-content-center'>

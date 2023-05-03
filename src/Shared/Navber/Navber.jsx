@@ -4,11 +4,14 @@ import { Link, NavLink } from 'react-router-dom';
 import './Navber.css'
 import { AuthContext } from '../../provider/AuthProvider';
 const Navber = () => {
-    const [isActive, setIsActive] = useState(true)
+    const [isActive, setIsActive, loading] = useState(true)
     const {user, logOut} = useContext(AuthContext)
-    // if(user){
-    //   <h1>loading...</h1>
+    // if(loading){
+    //  return <h1>loading...</h1>
+   
     // }
+    // console.log(user.displayName
+    //   )
     const handleLogout = ()=>{
       logOut()
       console.log(logOut())

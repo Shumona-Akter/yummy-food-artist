@@ -15,9 +15,19 @@ const ChefDetailsmain = () => {
     const {chefName,chefPicture, numberOfRecipes
 ,shortBio,totalLikes,totalRecipes,yearsOfExperience    } = chefDetails
 const [isDisable, setDisable] =useState(false)
+const [isDisable1, setDisable1] =useState(false)
+const [isDisable2, setDisable2] =useState(false)
 const notify = () => {
   toast("Your favorite items😊")
   setDisable(!isDisable)
+};
+const notify2 = () => {
+  toast("Your favorite items😊")
+  setDisable1(!isDisable1)
+};
+const notify3 = () => {
+  toast("Your favorite items😊")
+  setDisable2(!isDisable2)
 };
     
     
@@ -66,7 +76,7 @@ const notify = () => {
                                     <p className='text-black fs-6'><span className='text-warning'>Cooking_method:</span> {totalRecipes.recipes?.recipe2?.cooking_method}</p>
                                     <Rating style={{ maxWidth: 100 }} value={Rating} readOnly />
                                     <p className=' fs-6 text-warning'>Rating:  {totalRecipes.recipes?.recipe2?.rating} M</p>
-                                    <Button onClick={notify}  disabled={isDisable}>Favorite</Button>
+                                    <Button onClick={notify2}  disabled={isDisable1}>Favorite</Button>
                                     <ToastContainer />
                                   </Card.Text>
                                 </Card.Body>
@@ -82,7 +92,7 @@ const notify = () => {
                                     <p className='text-black fs-6'><span className='text-warning'>Cooking_method:</span> {totalRecipes.recipes?.recipe3?.cooking_method}</p>
                                     <Rating style={{ maxWidth: 100 }} value={Rating} readOnly />
                                     <p className=' fs-6 text-warning'>Rating:  {totalRecipes.recipes?.recipe3?.rating} M</p>
-                                    <Button nClick={notify}  disabled={isDisable}>Favorite</Button>
+                                    <Button onClick={notify3} disabled={isDisable2}>Favorite</Button>
                                   </Card.Text>
                                 </Card.Body>
                               </Card>

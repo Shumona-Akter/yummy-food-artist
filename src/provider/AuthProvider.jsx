@@ -52,7 +52,7 @@ useEffect(() => {
   // logout
 const logOut = ()=>{
     return signOut(auth)
- 
+    
  }
     const AuthInfo ={
         user,
