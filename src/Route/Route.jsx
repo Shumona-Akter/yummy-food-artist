@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import ErrorLayout from "../Layoutes/ErrorLayout";
 import Login from "../pages/Login";
 import Resister from "../pages/Resister";
+import ChefDetailsmain from "../pages/Home/ChefDetails/ChefDetailsmain";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,12 @@ const router = createBrowserRouter([
         element:<Resister/>,
         errorElement:<ErrorLayout></ErrorLayout>,
       },
+      {
+        path:'/:id',
+        element:<ChefDetailsmain></ChefDetailsmain>,
+        errorElement:<ErrorLayout></ErrorLayout>,
+        loader: ({params})=> fetch(`https://yummy-server-shumona-akter.vercel.app/chef/${params.id}`)
+      }
     ]
     },
   ]);

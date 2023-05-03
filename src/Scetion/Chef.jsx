@@ -16,7 +16,7 @@ const Chef = ({chef}) => {
                         <h6>{yearsOfExperience} Years of experience</h6>
                         <h6>{numberOfRecipes} Recipes</h6>
                         <h6>{totalLikes} Liks</h6>
-                        <Button className='btn-danger'><Link className='text-white text-decoration-none'>Read More</Link></Button>
+                        <Button className='btn-danger'><Link  to={`/${id}`}  className='text-white text-decoration-none'>Read More</Link></Button>
                       </Card.Text>
                     </Card.Body>
           </Card>

@@ -8,6 +8,8 @@ const AllChef = () => {
     console.log(allChef)
     return (
         <Container className='my-5 py-5'>
+             <h6 className='text-warning text-center display-5 my-5  fw-bold'>Our All Chef</h6>
+                  
                  <Row xs={1} md={6} className="g-4">
             {
                 allChef.map(chef => <Chef key={chef.id} chef={chef}></Chef>)
