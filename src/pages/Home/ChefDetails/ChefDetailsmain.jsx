@@ -37,18 +37,17 @@ const notify3 = () => {
 
     return (
         <>
-
-            <div className='p-5' >
-               <Container className='py-5 '>
-                        <div className="row">
+            <div className='' >
+               <div className='py-5' style={{background:`url(https://i.ibb.co/ZxrNZ2P/chef-Bg-0a21efd7.jpg) no-repeat center / cover`, }}>
+                        <div className="row container mx-auto py-5" >
                           <div className="col-lg-6">
-                          <h1 className='text-danger display-5 fw-bold'>{chefName}</h1>
-                         <h2 className='text-warning fs-4 fw-bold'>{yearsOfExperience} years  experience.</h2>
-                         <p className='text-warning fs-6  pt-3'>{shortBio}</p>
-                         <h6 className='text-primary'>{numberOfRecipes} Recipes</h6>
+                          <h1 className='text-danger fs-1 fw-bold'>{chefName}</h1>
+                         <p className='text-white fs-6  '>{shortBio}</p>
+                         <h2 className='text-white fs-6 fw-bold'>{yearsOfExperience} years  experience.</h2>
+                         <h6 className='text-white'>{numberOfRecipes} Recipes</h6>
                          
-                        <h6 className='text-primary fs-6'><span className='text-danger'><FaHandPointRight/></span> {totalLikes} M like</h6>
-                         <Button className='btn-danger'>Book Now</Button>
+                        <h6 className='text-white fs-6'><span className='text-danger'><FaHandPointRight/></span> {totalLikes} M like</h6>
+                         <Button className='btn-danger my-3'>Book Now</Button>
                           </div>
                           <div className="col-lg-6">
                           <LazyLoad height={300}  threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
@@ -57,12 +56,12 @@ const notify3 = () => {
                               
                           </div>
                         </div>
-               </Container>
+               </div>
             </div>
 
             <Container className='py-5 my-5'>
-              <h1 className='text-danger text-center my-3 display-5 fw-bold'>{chefName}</h1>
-              <h1 className='text-warning text-center fs-5 mb-5'>{chefName} Best Three Recipes Here</h1>
+              <h1 className='text-danger text-center my-3 fs-2 fw-bold'>{chefName}</h1>
+              <h1 className='text-warning text-center fs-5 mb-5'>Best Three Recipes Here</h1>
             <Row xs={1} md={3} className="g-4">
                             <Col>
                               <Card>

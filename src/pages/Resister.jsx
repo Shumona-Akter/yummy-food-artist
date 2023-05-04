@@ -1,7 +1,7 @@
 import React, {useState, useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { FaGoogle, FaGithub} from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
@@ -9,6 +9,9 @@ const Resister = () => {
   const {signUp,authError,setAuthError, user, setUser} = useContext(AuthContext)
   const [passwordCheaked, setPasswordCheaked] = useState("")
   const [error, setError]  = useState("")
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.form?.pathname || "/"
   
   const handlePassword =(e) =>{
     const pass = e.target.value
@@ -39,6 +42,7 @@ const Resister = () => {
         setAuthError("")
         event.target.reset()
         userProfileUpdate(result.user, name, photoUrl)
+        navigate(from, {replace: true})
        
       })
       .catch(error =>{

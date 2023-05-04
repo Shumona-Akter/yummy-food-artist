@@ -3,7 +3,7 @@ import { Col, Container, Image, Row } from 'react-bootstrap';
 
 const OurStory = () => {
     return (
-        <Container className='my-5 '>
+        <Container className=''>
            <Row>
                 <Col md={6} className='pe-3'>
                   <h6 className='text-warning fs-3 fst-italic  fw-bold'>Our Story</h6>
