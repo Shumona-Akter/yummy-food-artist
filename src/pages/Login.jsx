@@ -19,6 +19,7 @@ const Login = () => {
     .then(result =>{
       const googleUser = result.user
      setUser(googleUser)
+     navigate(from, {replace: true})
     })
     .catch(error => {
       console.log(error)
@@ -31,6 +32,7 @@ const Login = () => {
     .then(result =>{
       const googleUser = result.user
      setUser(googleUser)
+     navigate(from, {replace: true})
     })
     .catch(error => {
       console.log(error)
