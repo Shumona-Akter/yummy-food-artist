@@ -6,7 +6,9 @@ import '@smastrom/react-rating/style.css'
 import { FaHandPointRight } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+  import LazyLoad from 'react-lazy-load';
 
+  
 
 const ChefDetailsmain = () => {
     const {id} = useParams()
@@ -32,17 +34,29 @@ const notify3 = () => {
     
     
 
+
     return (
         <>
-            <div style={{background: `url(${chefPicture}) no-repeat top / cover` , }} className='p-5'>
+
+            <div className='p-5' >
                <Container className='py-5 '>
-                        <h1 className='text-danger display-5 fw-bold'>{chefName}</h1>
+                        <div className="row">
+                          <div className="col-lg-6">
+                          <h1 className='text-danger display-5 fw-bold'>{chefName}</h1>
                          <h2 className='text-warning fs-4 fw-bold'>{yearsOfExperience} years  experience.</h2>
-                         <p className='text-warning fs-6 w-50  pt-3'>{shortBio}</p>
+                         <p className='text-warning fs-6  pt-3'>{shortBio}</p>
                          <h6 className='text-primary'>{numberOfRecipes} Recipes</h6>
                          
                         <h6 className='text-primary fs-6'><span className='text-danger'><FaHandPointRight/></span> {totalLikes} M like</h6>
                          <Button className='btn-danger'>Book Now</Button>
+                          </div>
+                          <div className="col-lg-6">
+                          <LazyLoad height={300}  threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
+                          <img src={chefPicture} className='img-fluid' alt="" />
+                        </LazyLoad>
+                              
+                          </div>
+                        </div>
                </Container>
             </div>
 
@@ -52,7 +66,8 @@ const notify3 = () => {
             <Row xs={1} md={3} className="g-4">
                             <Col>
                               <Card>
-                                <Card.Img variant="top" src={totalRecipes.recipes?.recipe1?.img} />
+                                
+                                <Card.Img variant="top" style={{height:"250px"}} src={totalRecipes.recipes?.recipe1?.img} />
                                 <Card.Body>
                                   <Card.Title>{totalRecipes.recipes?.recipe1?.name}</Card.Title>
                                   <Card.Text>
@@ -68,7 +83,7 @@ const notify3 = () => {
                             </Col>
                             <Col>
                               <Card>
-                                <Card.Img variant="top" src={totalRecipes.recipes?.recipe2?.img} />
+                                <Card.Img variant="top" style={{height:"250px"}} src={totalRecipes.recipes?.recipe2?.img} />
                                 <Card.Body>
                                   <Card.Title>{totalRecipes.recipes?.recipe2?.name}</Card.Title>
                                   <Card.Text>
@@ -84,7 +99,7 @@ const notify3 = () => {
                             </Col>
                             <Col>
                               <Card>
-                                <Card.Img variant="top" src={totalRecipes.recipes?.recipe3?.img} />
+                                <Card.Img variant="top" style={{height:"250px"}} src={totalRecipes.recipes?.recipe3?.img} />
                                 <Card.Body>
                                   <Card.Title>{totalRecipes.recipes?.recipe3?.name}</Card.Title>
                                   <Card.Text>
@@ -99,9 +114,10 @@ const notify3 = () => {
                             </Col>
                            
                         </Row>
+
             </Container>
         </>
     );
 };
-
+// ReactDOM.render(<App />, document.body);
 export default ChefDetailsmain;

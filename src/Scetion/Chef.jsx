@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import LazyLoad from 'react-lazy-load';
 const Chef = ({chef}) => {
     console.log(chef)
     const {id, chefPicture, chefName,  yearsOfExperience, numberOfRecipes,totalLikes
@@ -9,7 +9,11 @@ const Chef = ({chef}) => {
     return (
             <Col md={4} className=''>
                 <Card>
-                    <Card.Img variant="top" src={chefPicture} />
+                  
+            <LazyLoad height={300}  threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
+            <Card.Img variant="top" src={chefPicture}  />
+          </LazyLoad>
+                    
                     <Card.Body>
                       <Card.Title className='text-warning text-decoration-none fs-4 fw-bold'>{chefName}</Card.Title>
                       <Card.Text>

@@ -21,7 +21,7 @@ const Navber = () => {
       });
     }
     return (
-        <Navbar bg="secondary py-4" expand="lg">
+        <Navbar bg="secondary " expand="lg">
       <Container>
         <Link to='/' className='text-danger fs-5 fw-bold text-decoration-none'>Yummy Food Artist</Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

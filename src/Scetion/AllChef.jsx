@@ -8,7 +8,8 @@ const AllChef = () => {
     console.log(allChef)
     return (
         <Container className='my-5 py-5'>
-             <h6 className='text-warning text-center display-5 my-5  fw-bold'>Our All Chef</h6>
+             <h6 className='text-warning text-center display-5 mt-5  fw-bold'>OUR THAI CHEF'S</h6>
+             <h6 className='text-black text-center fs-5 mb-5  fw-bold'>We are fluent in making appetizing meals.</h6>
                   
                  <Row xs={1} md={6} className="g-4">
             {
