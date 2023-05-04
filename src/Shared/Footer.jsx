@@ -4,7 +4,7 @@ import { FaCopyright, FaFacebook, FaGithub, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-       <div className='bg-black p-4'>
+       <div className='bg-secondary p-4'>
          <Container>
              <Row>
                 <Col sm={8} lg={4}><h1 className='text-white fs-6'>Yummy Food Artist</h1></Col>

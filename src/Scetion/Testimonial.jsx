@@ -5,8 +5,8 @@ import '@smastrom/react-rating/style.css'
 
 const Testimonial = () => {
     return (
-        <div style={{background: `url(https://img.freepik.com/free-photo/confident-young-male-cook-chef-uniform-standing-pointing-white-wall-isolated-orange-wall-with-copy-space_141793-101281.jpg?w=740&t=st=1682997707~exp=1682998307~hmac=3cd5519fc9a8a3fdc9a1f74e57bb3b6a5c43596e0f42847335b964847863c1f9) no-repeat top / cover` , }} className='p-5'>
-            <Container className='my-5 '>
+        <div style={{background: `url(https://img.freepik.com/free-photo/confident-young-male-cook-chef-uniform-standing-pointing-white-wall-isolated-orange-wall-with-copy-space_141793-101281.jpg?w=740&t=st=1682997707~exp=1682998307~hmac=3cd5519fc9a8a3fdc9a1f74e57bb3b6a5c43596e0f42847335b964847863c1f9) no-repeat top / cover` , }} className=''>
+          <div className='py-5 container '>
            <Row className='py-5'>
                 <Col md={6} className='pe-3'>
                   <h6 className='text-warning fs-3 fst-italic  fw-bold'>Testimonials</h6>
@@ -23,7 +23,7 @@ const Testimonial = () => {
                   
                 </Col>
         </Row>
-        </Container>
+        </div>
             
         </div>
     );

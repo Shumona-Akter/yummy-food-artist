@@ -51,7 +51,7 @@ const Resister = () => {
       const userProfileUpdate = (user, name, photoUrl) =>{
         updateProfile(user, {
           displayName: name,
-          photoUR: photoUrl
+          photoURL: photoUrl
         })
         .then(() => {
           console.log(name)

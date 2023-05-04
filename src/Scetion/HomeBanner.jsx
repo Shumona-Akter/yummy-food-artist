@@ -8,7 +8,7 @@ const HomeBanner = () => {
            <Container className='py-5 text-end'>
                     <h1 className='text-danger display-1 fw-bold'>Welcome</h1>
                      <h2 className='text-warning display-6 fw-bold'>Yummy Food Artist</h2>
-                     <p className='text-warning fs-6 w-50 ms-auto py-3'>The perfact chef for your restaurant. A chef is a professional cook and tradesman who is proficient in all aspects of food preparation, often focusing on a particular cuisine.</p>
+                     <p className='text-warning fs-6  ms-auto py-3'>The perfact chef for your restaurant. A chef is a <br /> professional cook and tradesman who is  proficient in all aspects of <br /> food preparation, often focusing on a particular cuisine.</p>
                      <Button className='btn-danger'>Book Now</Button>
            </Container>
         </div>
