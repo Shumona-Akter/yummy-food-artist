@@ -64,7 +64,7 @@ const notify3 = () => {
               <h1 className='text-warning text-center fs-5 mb-5'>Best Three Recipes Here</h1>
             <Row xs={1} md={3} className="g-4">
                             <Col>
-                              <Card>
+                              <Card style={{height:"670px"}}>
                                 
                                 <Card.Img variant="top" style={{height:"250px"}} src={totalRecipes.recipes?.recipe1?.img} />
                                 <Card.Body>
@@ -81,7 +81,7 @@ const notify3 = () => {
                               </Card>
                             </Col>
                             <Col>
-                              <Card>
+                              <Card style={{height:"670px"}}>
                                 <Card.Img variant="top" style={{height:"250px"}} src={totalRecipes.recipes?.recipe2?.img} />
                                 <Card.Body>
                                   <Card.Title>{totalRecipes.recipes?.recipe2?.name}</Card.Title>
@@ -97,7 +97,7 @@ const notify3 = () => {
                               </Card>
                             </Col>
                             <Col>
-                              <Card>
+                              <Card style={{height:"670px"}}>
                                 <Card.Img variant="top" style={{height:"250px"}} src={totalRecipes.recipes?.recipe3?.img} />
                                 <Card.Body>
                                   <Card.Title>{totalRecipes.recipes?.recipe3?.name}</Card.Title>

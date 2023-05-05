@@ -5,7 +5,8 @@ const ErrorLayout = () => {
     const error = useRouteError();
   console.error(error);
     return (
-        <div className='container text-center text-danger'>
+        <div style={{height:"100vh"}} className='container text-center text-danger d-flex justify-content-center align-items-center'>
+            <div>
             <h1>Sorry😢!</h1>
             <p>
               <i>{error.data || error.message}</i>
@@ -14,6 +15,7 @@ const ErrorLayout = () => {
               <i>{error.status || error.message}</i>
               <i>{error.statusText || error.message}</i>
             </p>
+            </div>
     </div>
     );
 };

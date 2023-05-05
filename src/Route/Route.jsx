@@ -17,29 +17,29 @@ const router = createBrowserRouter([
         {
         path:"/",
         element:<Home></Home>,
-        errorElement:<ErrorLayout></ErrorLayout>,
+        // errorElement:<ErrorLayout></ErrorLayout>,
         loader:() => fetch("https://yummy-server-shumona-akter.vercel.app/")
       },
         {
         path:"/login",
         element:<Login/>,
-        errorElement:<ErrorLayout></ErrorLayout>,
+        // errorElement:<ErrorLayout></ErrorLayout>,
       },
         {
         path:"/resister",
         element:<Resister/>,
-        errorElement:<ErrorLayout></ErrorLayout>,
+        // errorElement:<ErrorLayout></ErrorLayout>,
       },
       {
         path:'/:id',
         element:<PrivateRoutes><ChefDetailsmain></ChefDetailsmain></PrivateRoutes>,
-        errorElement:<ErrorLayout></ErrorLayout>,
+        // errorElement:<ErrorLayout></ErrorLayout>,
         loader: ({params})=> fetch(`https://yummy-server-shumona-akter.vercel.app/chef/${params.id}`)
       },
       {
         path:'/blog',
         element:<Blog></Blog>,
-        errorElement:<ErrorLayout></ErrorLayout>,
+        // errorElement:<ErrorLayout></ErrorLayout>,
        }
     ]
     },

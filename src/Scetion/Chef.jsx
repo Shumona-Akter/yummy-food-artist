@@ -10,16 +10,16 @@ const Chef = ({chef}) => {
             <Col md={4} className=''>
                 <Card>
                   
-            <LazyLoad height={300}  threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
+            <LazyLoad height={250}  threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
             <Card.Img variant="top" src={chefPicture}  />
           </LazyLoad>
                     
-                    <Card.Body>
+                    <Card.Body style={{height:"210px"}}>
                       <Card.Title className='text-warning text-decoration-none fs-4 fw-bold'>{chefName}</Card.Title>
                       <Card.Text>
                         <h6>{yearsOfExperience} Years of experience</h6>
                         <h6>{numberOfRecipes} Recipes</h6>
-                        <h6>{totalLikes} Liks</h6>
+                        <h6>{totalLikes} Likes</h6>
                         <Button className='btn-danger'><Link  to={`/${id}`}  className='text-white text-decoration-none'>Read More</Link></Button>
                       </Card.Text>
                     </Card.Body>
